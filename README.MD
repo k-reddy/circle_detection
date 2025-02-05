@@ -84,9 +84,8 @@ Here are some steps I took to improve the model's performance:
     - alpha and gamma
     - p(dropout) for each dropout layer (which led to eliminating the 3rd dropout layer)
 
-## Things I would do if I had more time and if higher accuracy were important:
-
-
+## Things I Would Do to Improve Accuracy
+<img src="model_loss.png" width="200" alt="Model Loss">
 The fundamental issue I see with the model is it converges quickly and then fails to learn after ~the 7th epoch. I would start by trying to figure out why that is. 
 - Review architecture choices for potential improvements
 - Optimize hyperparameters over a greater range of choices and with more data
