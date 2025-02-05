@@ -1,0 +1,10 @@
+models/
+__pycache__/
+cnnvenv
+.env
+.env.local
+.env.*.local
+.pytest_cache/
+.ipynb_checkpoints
+.idea/
+
