@@ -9,8 +9,8 @@ For my test statistc, I used the "intesection over union" (IOU) because it's eas
 I looked at the % of test data samples with IOU over 10%, 25%, 50%, 75%, 90%, and 95% because I find it more valuable to visualize the distribution than to pick a threshold.
 
 ### Results 
-I tested the model on a 10,000 image test dataset and achieved the following performance: 
-MSE Loss: 5.89
+I tested the model on a 10,000 image test dataset and achieved an MSE Loss of 5.89 and the following performance on the test statistic:
+
 | Threshold | %IOUs over Threshold |
 | -- | -- |
 |>10%|99.8%|
