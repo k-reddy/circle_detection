@@ -13,12 +13,12 @@ I tested the model on a 10,000 image test dataset and achieved an MSE Loss of 5.
 
 | Threshold | %IOUs over Threshold |
 | -- | -- |
-|>10%|99.8%|
-|>25%|99.6%|
-|>50%|97.8%|
-|>75%|83.5%|
-|>90%|35.5%|
-|>95%|7.6%|
+|10%|99.8%|
+|25%|99.6%|
+|50%|97.8%|
+|75%|83.5%|
+|90%|35.5%|
+|95%|7.6%|
 
 # How the Code Works 
 
