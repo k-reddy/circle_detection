@@ -12,6 +12,7 @@ I looked at the % of test data samples with IOU over 10%, 25%, 50%, 75%, 90%, an
 I tested the model on a 10,000 image test dataset and achieved the following performance: 
 MSE Loss: 5.89
 | Threshold | %IOUs over Threshold |
+| -- | -- |
 |>10%|99.8%|
 |>25%|99.6%|
 |>50%|97.8%|
