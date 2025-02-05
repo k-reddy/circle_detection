@@ -10,14 +10,14 @@ I looked at the % of test data samples with IOU over 10%, 25%, 50%, 75%, 90%, an
 
 ### Results 
 I tested the model on a 10,000 image test dataset and achieved the following performance: 
-MSE Loss: 5.88713338428412
+MSE Loss: 5.89
 % IOUs over threshold:
->10%: 99.8%,
->25%: 99.6%
->50%: 97.8%
->75%: 83.5%
->90%: 35.5%
->95%: 7.6%
+    >10%: 99.8%,
+    >25%: 99.6%
+    >50%: 97.8%
+    >75%: 83.5%
+    >90%: 35.5%
+    >95%: 7.6%
 
 # How the Code Works 
 
@@ -85,7 +85,10 @@ Here are some steps I took to improve the model's performance:
     - p(dropout) for each dropout layer (which led to eliminating the 3rd dropout layer)
 
 ### Things I Would Do to Improve Accuracy
-<img src="model_loss.png" width="400" alt="Model Loss">
+<p align="center">
+    <img src="model_loss.png" width="400" alt="Model Loss">
+</p>
+
 The fundamental issue I see with the model is it converges quickly and then fails to learn after ~the 7th epoch. I would start by trying to figure out why that is. 
 - Review architecture choices for potential improvements
 - Optimize hyperparameters over a greater range of choices and with more data
