@@ -18,7 +18,7 @@ class DataParams:
     noise_level: float = 0.5
     crop: bool = False
     batch_size: int = 32
-    num_samples: int = 50000
+    num_samples: int = 10000
 
 
 @dataclass
@@ -26,8 +26,8 @@ class TrainingParams:
     weight_decay: float = 1.5e-05
     momentum: float = 0.9
     alpha: float = 0.009
-    gamma: float = 0.62
-    epochs: int = 5
+    gamma: float = 0.5
+    epochs: int = 25
 
 
 # Best model so far

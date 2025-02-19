@@ -29,17 +29,6 @@ class ModelTrainer:
         if hyperparam_run and trial is None:
             raise ValueError("Hyperparam run requires a trial")
 
-        training_dataset = CircleDataset(
-            data_params.num_samples,
-            data_params.noise_level,
-        )
-
-        self.training_dataloader = DataLoader(
-            training_dataset,
-            batch_size=data_params.batch_size,
-            shuffle=True,
-        )
-
         self.model = model
         self.training_params = training_params
         self.data_params = data_params
@@ -47,6 +36,8 @@ class ModelTrainer:
         self.trial = trial
         self.training_losses: list = []
         self.validation_losses: list = []
+
+        self.training_dataloader = None
 
         self.loss_fn = nn.MSELoss()
 
@@ -64,7 +55,7 @@ class ModelTrainer:
         #     )
 
         self.learning_rate_scheduler = StepLR(
-            self.optimizer, step_size=1, gamma=self.training_params.gamma
+            self.optimizer, step_size=5, gamma=self.training_params.gamma
         )
 
     def train_model(
@@ -76,6 +67,18 @@ class ModelTrainer:
         self.model.train()
 
         for epoch in range(self.training_params.epochs):
+            # use new data for every epoch
+            training_dataset = CircleDataset(
+                self.data_params.num_samples,
+                self.data_params.noise_level,
+            )
+
+            self.training_dataloader = DataLoader(
+                training_dataset,
+                batch_size=self.data_params.batch_size,
+                shuffle=True,
+            )
+
             avg_loss, pct_iou_over_thresholds = self.train_epoch()
             validation_loss, validation_pct_iou_over_thresholds = self.validate_model()
 
